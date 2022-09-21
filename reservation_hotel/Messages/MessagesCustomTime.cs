@@ -8,13 +8,13 @@ namespace reservation_hotel.Messages
 {
     public static class MessagesCustomTime
     {
-        public static void MessageDelayClear(string message, int time)
+        public static void MessageDelayClear(string message, int time = 1)
         {
             Console.WriteLine(message);
             Thread.Sleep(time * 1000);
             Console.Clear();
         }
-        public static void MessageDelaySeconds(string message, int time)
+        public static void MessageDelaySeconds(string message, int time = 1)
         {
             Console.WriteLine(message);
             Thread.Sleep(time * 1000);

@@ -1,4 +1,5 @@
 ﻿using reservation_hotel.Core;
+using reservation_hotel.Messages;
 using reservation_hotel.Services;
 //Start Program
 var hotel = new HotelProgram();
@@ -7,3 +8,4 @@ var hotel = new HotelProgram();
 hotel.Hotel = StartHotelService.CreateHotel();
 
 
+Messages.StartProgramMessage();

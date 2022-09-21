@@ -12,8 +12,23 @@ namespace reservation_hotel.Messages
         public static void StartProgramMessage()
         {
             MessagesCustomTime.MessageDelayClear(StringLong.StartProgram, 3);
-            MessagesCustomTime.MessageDelaySeconds(StringLong.WelcomeProgram, 1);
-
+            MessagesCustomTime.MessageDelaySeconds(StringLong.WelcomeProgram);
         }
+
+        public static void FirstMenuMessage()
+        {
+            MessagesCustomTime.MessageDelaySeconds(StringOptions.OptionUser);
+            MessagesCustomTime.MessageDelaySeconds(StringOptions.OptionRoom);
+            MessagesCustomTime.MessageDelaySeconds(StringOptions.OptionReservation);
+        }
+
+        public static void MenuUserMessage()
+        {
+            MessagesCustomTime.MessageDelaySeconds(StringOptions.ListUser);
+            MessagesCustomTime.MessageDelaySeconds(StringOptions.RegisterUser);
+            MessagesCustomTime.MessageDelaySeconds(StringOptions.RemoveUser);
+        }
+
+
     }
 }

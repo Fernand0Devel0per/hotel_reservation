@@ -8,7 +8,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Auxiliares\" />
+    <Compile Remove="Auxiliares\**" />
+    <EmbeddedResource Remove="Auxiliares\**" />
+    <None Remove="Auxiliares\**" />
   </ItemGroup>
 
   <ItemGroup>

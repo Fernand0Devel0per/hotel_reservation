@@ -1,54 +1,52 @@
-{
+
   [
     {
-      "Number": 1 ,
+      "Number": 1,
       "Space": 2,
-      "Category": [
+      "Category": {
         "Name": "Suite Casal Simples",
-        "Price": 100
-      ]
+        "Price": 100.00
+      }
     },
     {
       "Number":2,
       "Space": 2,
-      "Category": [
+      "Category": {
         "Name": "Suite Casal Simples",
-        "Price": 100
-      ]
+        "Price": 100.00
+      }
     },
     {
       "Number":3,
       "Space": 1,
-      "Category": [
-        "Name" "Suite Individual Simples",
-        "Price": 60
-      ]
+      "Category": {
+        "Name": "Suite Individual Simples",
+        "Price": 60.00
+      }
     },
     {
       "Number":4,
       "Space": 1,
-      "Category": [
-        "Name":"Suite Individual Simples",
-        "Price":60
-      ]
+      "Category": {
+        "Name": "Suite Individual Simples",
+        "Price": 60.00
+      }
     },
     {
       "Number":5,
       "Space": 1,
-      "Category": [
+      "Category": {
         "Name": "Suite Simples Premiun",
-        "Price": 150
-      ]
+        "Price": 150.00
+      }
     },
     {
       "Number":6,
       "Space": 2,
-      "Category": [
+      "Category": {
         "Name": "Suite Casal Premiun",
-        "Price": 300
-      ]
+        "Price": 300.00
+      }
     }
-
   ]
  
-}

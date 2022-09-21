@@ -1,0 +1,17 @@
+C:\Users\fhlot\Desktop\hotel_reservation_dio\reservation_hotel\bin\Debug\net6.0\reservation_hotel.exe
+C:\Users\fhlot\Desktop\hotel_reservation_dio\reservation_hotel\bin\Debug\net6.0\reservation_hotel.deps.json
+C:\Users\fhlot\Desktop\hotel_reservation_dio\reservation_hotel\bin\Debug\net6.0\reservation_hotel.runtimeconfig.json
+C:\Users\fhlot\Desktop\hotel_reservation_dio\reservation_hotel\bin\Debug\net6.0\reservation_hotel.dll
+C:\Users\fhlot\Desktop\hotel_reservation_dio\reservation_hotel\bin\Debug\net6.0\reservation_hotel.pdb
+C:\Users\fhlot\Desktop\hotel_reservation_dio\reservation_hotel\bin\Debug\net6.0\Newtonsoft.Json.dll
+C:\Users\fhlot\Desktop\hotel_reservation_dio\reservation_hotel\obj\Debug\net6.0\reservation_hotel.csproj.AssemblyReference.cache
+C:\Users\fhlot\Desktop\hotel_reservation_dio\reservation_hotel\obj\Debug\net6.0\reservation_hotel.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\fhlot\Desktop\hotel_reservation_dio\reservation_hotel\obj\Debug\net6.0\reservation_hotel.AssemblyInfoInputs.cache
+C:\Users\fhlot\Desktop\hotel_reservation_dio\reservation_hotel\obj\Debug\net6.0\reservation_hotel.AssemblyInfo.cs
+C:\Users\fhlot\Desktop\hotel_reservation_dio\reservation_hotel\obj\Debug\net6.0\reservation_hotel.csproj.CoreCompileInputs.cache
+C:\Users\fhlot\Desktop\hotel_reservation_dio\reservation_hotel\obj\Debug\net6.0\reservation_hotel.csproj.CopyComplete
+C:\Users\fhlot\Desktop\hotel_reservation_dio\reservation_hotel\obj\Debug\net6.0\reservation_hotel.dll
+C:\Users\fhlot\Desktop\hotel_reservation_dio\reservation_hotel\obj\Debug\net6.0\refint\reservation_hotel.dll
+C:\Users\fhlot\Desktop\hotel_reservation_dio\reservation_hotel\obj\Debug\net6.0\reservation_hotel.pdb
+C:\Users\fhlot\Desktop\hotel_reservation_dio\reservation_hotel\obj\Debug\net6.0\reservation_hotel.genruntimeconfig.cache
+C:\Users\fhlot\Desktop\hotel_reservation_dio\reservation_hotel\obj\Debug\net6.0\ref\reservation_hotel.dll
