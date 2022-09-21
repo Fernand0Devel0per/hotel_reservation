@@ -12,6 +12,7 @@ namespace reservation_hotel.Messages
         public static void StartProgramMessage()
         {
             MessagesCustomTime.MessageDelayClear(StringLong.StartProgram, 3);
+            MessagesCustomTime.MessageDelaySeconds(StringLong.WelcomeProgram, 1);
 
         }
     }
