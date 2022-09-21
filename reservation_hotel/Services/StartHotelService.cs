@@ -16,6 +16,12 @@ namespace reservation_hotel.Services
             var rooms = ReadRoomsList(@"..\Infra\Data\Rooms.json");
             var users = ReadUsersList(@"..\Infra\Data\Users.json");
             var hotel = new Hotel();
+            hotel.Rooms = rooms;
+            hotel.Users = users;
+            hotel.OrderFinish = new List<Order>();
+            hotel.OrderActives = new List<Order>();
+
+            return hotel;
         }
 
         private static List<Room> ReadRoomsList(string path)
@@ -51,6 +57,42 @@ namespace reservation_hotel.Services
             }
 
             return users;
+
+        }
+
+        private static List<Order> ReadOrderActivesList(string path)
+        {
+            string content = string.Empty;
+            List<Order> order;
+            try
+            {
+                content = File.ReadAllText(path);
+                order = JsonConvert.DeserializeObject<List<Order>>(content);
+            }
+            catch (FileNotFoundException)
+            {
+                throw new FileNotFoundException(StringError.FileOrderActivesNotFound, path);
+            }
+
+            return order;
+
+        }
+
+        private static List<Order> ReadOrderFinishList(string path)
+        {
+            string content = string.Empty;
+            List<Order> order;
+            try
+            {
+                content = File.ReadAllText(path);
+                order = JsonConvert.DeserializeObject<List<Order>>(content);
+            }
+            catch (FileNotFoundException)
+            {
+                throw new FileNotFoundException(StringError.FileOrderFinishNotFound, path);
+            }
+
+            return order;
 
         }
     }
