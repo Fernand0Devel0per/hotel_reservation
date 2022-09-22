@@ -11,6 +11,7 @@ namespace reservation_hotel.Strings
         public static readonly string OptionUser = "(1) Clientes.";
         public static readonly string OptionRoom = "(2) Quartos.";
         public static readonly string OptionReservation = "(3) Reservas";
+        public static readonly string LeaveProgram = "(4) Sair";
 
         public static readonly string ListUser = "(1) Listar Clientes.";
         public static readonly string RegisterUser = "(2) Cadastrar Cliente.";

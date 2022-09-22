@@ -12,6 +12,7 @@ namespace reservation_hotel.Strings
         public static readonly string FileUsersNotFound = "O arquivo com os usuarios não foi encontrado";
         public static readonly string FileOrderActivesNotFound = "O arquivo com os ordens ativas não foi encontrado";
         public static readonly string FileOrderFinishNotFound = "O arquivo com os ordens finalizadas não foi encontrado";
+        public static readonly string ValueIsNotInteger = "Error, confira o valor digitado e tente novamente.";
 
     }
 }

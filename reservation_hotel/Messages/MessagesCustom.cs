@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace reservation_hotel.Messages
 {
-    public static class MessagesCustomTime
+    public static class MessagesCustom
     {
         public static void MessageDelayClear(string message, int time = 1)
         {
@@ -14,10 +14,12 @@ namespace reservation_hotel.Messages
             Thread.Sleep(time * 1000);
             Console.Clear();
         }
-        public static void MessageDelaySeconds(string message, int time = 1)
+        public static void MessageDelay(string message, int time = 1)
         {
             Console.WriteLine(message);
             Thread.Sleep(time * 1000);
         }
+
+        
     }
 }
