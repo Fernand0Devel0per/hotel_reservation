@@ -1,4 +1,5 @@
-﻿using reservation_hotel.Strings;
+﻿using reservation_hotel.Models;
+using reservation_hotel.Strings;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -30,6 +31,17 @@ namespace reservation_hotel.Messages
             MessagesCustom.MessageDelay(StringOptions.RegisterUser);
             MessagesCustom.MessageDelay(StringOptions.RemoveUser);
             MessagesCustom.MessageDelay(StringOptions.LeaveProgram);
+        }
+
+        public static void UserListMessage(User user) 
+        {
+            StringBuilder sb = new StringBuilder();
+            sb.AppendLine(string.Format("{0}{1}", StringShort.Name, user.Name));
+            sb.AppendLine(string.Format("{0}{1}", StringShort.Cpf, user.Cpf));
+            sb.AppendLine(string.Format("{0}{1}", StringShort.PhoneNumber, user.Phone));
+            sb.Append("--------------------------------");
+            Console.WriteLine(sb.ToString());
+
         }
 
 

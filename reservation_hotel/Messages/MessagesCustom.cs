@@ -24,8 +24,12 @@ namespace reservation_hotel.Messages
         {
             Console.Clear();
             Console.WriteLine(message);
-            
-            
+        }
+
+        public static void MessageAwaitKeyPress(string message) 
+        {
+            Console.WriteLine(message);
+            Console.ReadKey();
         }
 
 

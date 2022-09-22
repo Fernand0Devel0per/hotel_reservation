@@ -1,4 +1,4 @@
-{
+
   [
     {
       "Name":"Tio Patinhas",
@@ -6,10 +6,9 @@
       "Phone": "55-16-999555541"
     },
     {
-
       "Name": "Chapolin Colorado",
       "Cpf": "352.125.125-46",
-      "Phone":  "55-25-989577541":
+      "Phone":  "55-25-989577541"
     },
     {
       "Name": "Mickey Mouse",
@@ -17,11 +16,8 @@
       "Phone": "55-32-978573041"
     },
     {
-
       "Name": "Honoravel Medidor de Luz",
       "Cpf": "152.185.265-00",
-      "Phone":
+      "Phone": "55-32-988587441"
     }
   ]
-
-}

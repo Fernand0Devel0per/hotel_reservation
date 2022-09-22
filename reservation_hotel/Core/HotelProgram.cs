@@ -47,6 +47,7 @@ namespace reservation_hotel.Core
                     switch (optionsSelect)
                     {
                         case 1:
+                            GetAllUsers();
                             break;
                         case 2:
                             break;
@@ -55,8 +56,14 @@ namespace reservation_hotel.Core
                     }
                 }
                
-            } while (!(optionsSelect == 4));
-           
+            } while (!(optionsSelect == 4));  
+        }
+
+        private void GetAllUsers()
+        {
+            List<User> user = Hotel.Users.OrderBy(u => u.Name).ToList();
+            user.ForEach(u => Message.UserListMessage(u));
+            MessagesCustom.MessageAwaitKeyPress(StringLong.PressKeyToExit);
         }
 
 

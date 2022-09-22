@@ -10,5 +10,8 @@ namespace reservation_hotel.Strings
     {
         public static readonly string InsertValue = "Digite a Opçao:";
         public static readonly string InvalidOption = "Opção Invalida.";
+        public static readonly string Name = "Name: ";
+        public static readonly string Cpf = "CPF: ";
+        public static readonly string PhoneNumber = "Telefone: ";
     }
 }
