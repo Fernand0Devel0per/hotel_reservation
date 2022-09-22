@@ -20,6 +20,15 @@ namespace reservation_hotel.Messages
             Thread.Sleep(time * 1000);
         }
 
-        
+        public static void MessageClearAndMessage(string message) 
+        {
+            Console.Clear();
+            Console.WriteLine(message);
+            
+            
+        }
+
+
+
     }
 }

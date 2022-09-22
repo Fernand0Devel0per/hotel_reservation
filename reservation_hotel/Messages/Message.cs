@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace reservation_hotel.Messages
 {
-    public static class Messages
+    public static class Message
     {
         public static void StartProgramMessage()
         {
@@ -25,9 +25,11 @@ namespace reservation_hotel.Messages
 
         public static void MenuUserMessage()
         {
+            MessagesCustom.MessageClearAndMessage(StringLong.WelcomeProgram);
             MessagesCustom.MessageDelay(StringOptions.ListUser);
             MessagesCustom.MessageDelay(StringOptions.RegisterUser);
             MessagesCustom.MessageDelay(StringOptions.RemoveUser);
+            MessagesCustom.MessageDelay(StringOptions.LeaveProgram);
         }
 
 

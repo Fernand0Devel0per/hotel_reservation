@@ -5,19 +5,17 @@ using reservation_hotel.Strings;
 //Start Program
 var hotel = new HotelProgram(StartHotelService.CreateHotel());
 
-Messages.StartProgramMessage();
+Message.StartProgramMessage();
 
 int manipulator ;
 do
 {
-    Messages.FirstMenuMessage();
+    Message.FirstMenuMessage();
     manipulator = ConvertCheckService.ParseIntCheck();
-	if (manipulator == -1 || manipulator == 4) {
-        
+    if (!ConditionsService.OptionIsValid(manipulator))
         continue;
-    } else if (manipulator < -1 || manipulator > 4)
-        MessagesCustom.MessageDelayClear(StringShort.InvalidOption);
-
+    else
+        hotel.Options(manipulator);
 
 
 } while (!(manipulator == 4));

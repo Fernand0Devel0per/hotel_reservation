@@ -1,9 +1,12 @@
 ﻿using reservation_hotel.Models;
+using reservation_hotel.Messages;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using reservation_hotel.Services;
+using reservation_hotel.Strings;
 
 namespace reservation_hotel.Core
 {
@@ -17,9 +20,11 @@ namespace reservation_hotel.Core
 
         public void Options(int optionsSelect)
         {
+            
             switch (optionsSelect)
             {
                 case 1:
+                    UserOptions();
                     break;
                 case 2:
                     break;
@@ -31,17 +36,27 @@ namespace reservation_hotel.Core
         private void UserOptions()
         {
             int optionsSelect = 0;
-
-            switch (optionsSelect)
+            do
             {
-                case 1:
-                    break;
-                case 2:
-                    break;
-                case 3:
-                    break;
-                
-            }
+                Message.MenuUserMessage();
+                optionsSelect = ConvertCheckService.ParseIntCheck();
+                if (!ConditionsService.OptionIsValid(optionsSelect))
+                    continue;
+                else
+                {
+                    switch (optionsSelect)
+                    {
+                        case 1:
+                            break;
+                        case 2:
+                            break;
+                        case 3:
+                            break;
+                    }
+                }
+               
+            } while (!(optionsSelect == 4));
+           
         }
 
 
