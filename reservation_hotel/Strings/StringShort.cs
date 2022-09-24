@@ -13,5 +13,6 @@ namespace reservation_hotel.Strings
         public static readonly string Name = "Name: ";
         public static readonly string Cpf = "CPF: ";
         public static readonly string PhoneNumber = "Telefone: ";
+        
     }
 }

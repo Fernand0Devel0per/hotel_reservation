@@ -44,6 +44,12 @@ namespace reservation_hotel.Messages
 
         }
 
+        public static void TwoMessages(string firstMessage, string secondMessage) 
+        {
+            Console.WriteLine(firstMessage);
+            Console.Write(secondMessage);
+        }
+
 
     }
 }

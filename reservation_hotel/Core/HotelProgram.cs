@@ -50,6 +50,7 @@ namespace reservation_hotel.Core
                             GetAllUsers();
                             break;
                         case 2:
+                            RegisterUser();
                             break;
                         case 3:
                             break;
@@ -66,6 +67,10 @@ namespace reservation_hotel.Core
             MessagesCustom.MessageAwaitKeyPress(StringLong.PressKeyToExit);
         }
 
+        private void RegisterUser()
+        {
+            string phone = ConvertCheckService.ParsePhone();
+        }
 
     }
 }
