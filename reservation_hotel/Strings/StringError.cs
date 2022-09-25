@@ -15,6 +15,7 @@ namespace reservation_hotel.Strings
         public static readonly string ValueIsNotInteger = "Error, confira o valor digitado e tente novamente.";
         public static readonly string PhoneIsNotValid = "O Numero digitado não é um telefone valido.";
         public static readonly string CpfIsNotValid = "O Numero digitado não é um Cpf valido.";
-        public static readonly string UserIsRegister = "Este usuario ja esta cadastrado.";
+        public static readonly string UserIsRegister = "Este cliente ja esta cadastrado.";
+        public static readonly string UserIsNotRegister = "Este cliente não foi encontrado em nossos registros.";
     }
 }

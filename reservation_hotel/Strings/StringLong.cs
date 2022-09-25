@@ -9,6 +9,7 @@
         public static readonly string DigitCPF = "Digite o CPF somentes numeros.";
         public static readonly string DigitName = "Digite o nome do cliente.";
         public static readonly string UserCreate = "Cliente cadastrado com sucesso.";
+        public static readonly string UserDeleted = "Cliente removido com sucesso.";
 
     }
 }

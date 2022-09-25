@@ -53,6 +53,7 @@ namespace reservation_hotel.Core
                             RegisterUser();
                             break;
                         case 3:
+                            RemoveUser();
                             break;
                     }
                 }
@@ -91,6 +92,34 @@ namespace reservation_hotel.Core
                     Hotel.Users.Remove(user);
                     MessagesCustom.MessageDelayClear(StringError.FileUsersNotFound);
                 }
+            }
+
+        }
+
+        private void RemoveUser()
+        {
+            string cpf = ConvertCheckService.ParseCpf();
+            User user = Hotel.Users.FirstOrDefault(u => u.Cpf == cpf);
+            if (user != null)
+            {
+
+                try
+                {
+                    Hotel.Users.Remove(user);
+                    RepositoryService.SaveNewUser(Hotel.Users, @"C:\Users\fhlot\Desktop\hotel_reservation_dio\reservation_hotel\Infra\Data\", "Users.json");
+                    Message.UserListMessage(user);
+                    MessagesCustom.MessageAwaitKeyPress(StringLong.UserDeleted);
+                }
+                catch (Exception)
+                {
+                    Hotel.Users.Add(user);
+                }
+                
+
+            }
+            else
+            {
+                MessagesCustom.MessageDelayClear(StringError.UserIsNotRegister);
             }
 
         }
