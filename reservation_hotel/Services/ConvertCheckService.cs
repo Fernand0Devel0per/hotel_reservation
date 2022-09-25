@@ -28,6 +28,7 @@ namespace reservation_hotel.Services
 
         public static string ParsePhone()
         {
+            Console.Clear();
             bool result = false;
             string phone = string.Empty;
             do
@@ -40,8 +41,43 @@ namespace reservation_hotel.Services
                     MessagesCustom.MessageDelayClear(StringError.PhoneIsNotValid);
                 }
             } while (!result);
-            return phone;
+
+            return FormatPhoneNumber(phone);
         }
+
+        public static string ParseCpf()
+        {
+            Console.Clear();
+            bool result = false;
+            string Cpf = string.Empty;
+            do
+            {
+                Message.TwoMessages(StringLong.DigitCPF, StringShort.Cpf);
+                Cpf = Console.ReadLine();
+                result = ConditionsService.ValidCpf(Cpf);
+                if (!result)
+                {
+                    MessagesCustom.MessageDelayClear(StringError.CpfIsNotValid);
+                }
+            } while (!result);
+
+            return FormatCpf(Cpf);
+        }
+
+        private static string FormatCpf(string cpf) => 
+            $"{cpf.Substring(0, 3)}.{cpf.Substring(3, 3)}.{cpf.Substring(6,3)}-{cpf.Substring(9)}";
+
+        private static string FormatPhoneNumber(string phoneNumber) =>
+            $"{55}-{phoneNumber.Substring(0,2)}-{phoneNumber.Substring(2)}";
+
+        public static string GetName() 
+        {
+            Console.Clear();
+            Message.TwoMessages(StringLong.DigitName, StringShort.Name);
+            string name = Console.ReadLine();
+            return name;
+        }
+
 
     }
 }

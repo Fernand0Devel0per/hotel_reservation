@@ -70,6 +70,29 @@ namespace reservation_hotel.Core
         private void RegisterUser()
         {
             string phone = ConvertCheckService.ParsePhone();
+            string cpf = ConvertCheckService.ParseCpf();
+            string name = ConvertCheckService.GetName();
+            
+            if (ConditionsService.UserIsRegister(cpf, Hotel.Users))
+                MessagesCustom.MessageDelayClear(StringError.UserIsRegister);
+            else
+            {
+                User user = new User(name, cpf, phone);
+                Hotel.Users.Add(user);
+                try
+                {
+                    RepositoryService.SaveNewUser(Hotel.Users, @"C:\Users\fhlot\Desktop\hotel_reservation_dio\reservation_hotel\Infra\Data\", "Users.json");
+                    Message.UserListMessage(user);
+                    MessagesCustom.MessageAwaitKeyPress(StringLong.UserCreate);
+                }
+                catch (Exception)
+                {
+
+                    Hotel.Users.Remove(user);
+                    MessagesCustom.MessageDelayClear(StringError.FileUsersNotFound);
+                }
+            }
+
         }
 
     }

@@ -1,4 +1,5 @@
 ﻿using reservation_hotel.Messages;
+using reservation_hotel.Models;
 using reservation_hotel.Strings;
 using System;
 using System.Collections.Generic;
@@ -34,6 +35,20 @@ namespace reservation_hotel.Services
         {
             var Cpf = new Regex("[0-9]{11}");
             return Cpf.IsMatch(phoneValue);
+        }
+
+        public static bool UserIsRegister(string cpf, List<User> users)
+        {
+            foreach (var item in users)
+            {
+                if (item.Cpf == cpf)
+                {
+                    return true;
+                    break;
+                } 
+            }
+            return false;
+
         }
     }
 

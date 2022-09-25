@@ -3,9 +3,9 @@ using reservation_hotel.Models;
 
 namespace reservation_hotel.Services
 {
-    public class RepositoryService
+    public static class RepositoryService
     {
-        public bool SaveNewUser(List<User> users, string path, string fileName) 
+        public static bool SaveNewUser(List<User> users, string path, string fileName) 
         {
             try
             {
