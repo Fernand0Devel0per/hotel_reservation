@@ -21,5 +21,22 @@ namespace reservation_hotel.Services
             
 
         }
+
+        public static bool SaveNewRoom(List<Room> rooms, string path, string fileName)
+        {
+            try
+            {
+                string json = JsonConvert.SerializeObject(rooms);
+                string fullPath = Path.Combine(path, fileName);
+                File.WriteAllText(fullPath, json);
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+            return true;
+
+
+        }
     }
 }

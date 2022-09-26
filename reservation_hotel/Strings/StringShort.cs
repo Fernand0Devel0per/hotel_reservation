@@ -13,6 +13,11 @@ namespace reservation_hotel.Strings
         public static readonly string Name = "Name: ";
         public static readonly string Cpf = "CPF: ";
         public static readonly string PhoneNumber = "Telefone: ";
-        
+        public static readonly string RoomNumber = "Numero: ";
+        public static readonly string RoomSpace = "Numero total de hospedes: ";
+        public static readonly string CategoryName = "Categoria: ";
+        public static readonly string CategoryPrice = "Preço da Diaria: ";
+
+
     }
 }

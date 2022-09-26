@@ -1,8 +1,10 @@
 ﻿using reservation_hotel.Messages;
+using reservation_hotel.Models;
 using reservation_hotel.Strings;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -21,6 +23,31 @@ namespace reservation_hotel.Services
             if (!result)
             {
                 MessagesCustom.MessageDelayClear(StringError.ValueIsNotInteger);
+                return -1;
+            }
+            return valueParse;
+        }
+        public static int ParseIntCheckNoMessage()
+        {
+            int valueParse = 0;
+            bool result;
+            result = int.TryParse(Console.ReadLine(), out valueParse);
+            if (!result)
+            {
+                MessagesCustom.MessageDelayClear(StringError.ValueIsNotInteger);
+                return -1;
+            }
+            return valueParse;
+        }
+
+        public static decimal ParseDecimalCheckNoMessage()
+        {
+            decimal valueParse = 0;
+            bool result;
+            result = decimal.TryParse(Console.ReadLine(), out valueParse);
+            if (!result)
+            {
+                MessagesCustom.MessageDelayClear(StringError.ValueIsNotDecimal);
                 return -1;
             }
             return valueParse;
@@ -76,6 +103,67 @@ namespace reservation_hotel.Services
             Message.TwoMessages(StringLong.DigitName, StringShort.Name);
             string name = Console.ReadLine();
             return name;
+        }
+
+        public static int GetNumberRoom()
+        {
+            bool result = false;
+            int number = 0;
+            do
+            {
+                Console.Clear();
+                Message.TwoMessages(StringLong.DigitNumberRoom, StringShort.RoomNumber);
+                number = ParseIntCheckNoMessage();
+                result = ConditionsService.IsBiggerZero(number);
+                if (!result)
+                {
+                    MessagesCustom.MessageDelayClear(StringError.ValueBiggerZero);
+                }
+            } while (!result);
+            return number;
+
+        }
+
+        public static int GetSpaceRoom()
+        {
+            bool result = false;
+            int space = 0;
+            do
+            {
+                Console.Clear();
+                Message.TwoMessages(StringLong.DigitSpaceRoom, StringShort.RoomSpace);
+                space = ParseIntCheckNoMessage();
+                result = ConditionsService.IsBiggerZero(space);
+                if (!result)
+                {
+                    MessagesCustom.MessageDelayClear(StringError.ValueBiggerZero);
+                }
+            } while (!result);
+            return space;
+
+        }
+
+        public static Category GetCategoryRoom() 
+        {
+            Console.Clear();
+            Message.TwoMessages(StringLong.DigitCategoryName, StringShort.CategoryName);
+            string nameCategory = Console.ReadLine();
+
+            bool result = false;
+            decimal valueRoom = 0m;
+            do
+            {
+                Console.Clear();
+                Message.TwoMessages(StringLong.DigitValueByDay, StringShort.CategoryPrice);
+                valueRoom = ParseDecimalCheckNoMessage();
+                result = ConditionsService.IsBiggerZero(valueRoom);
+                if (!result)
+                {
+                    MessagesCustom.MessageDelayClear(StringError.ValueBiggerZeroDecimal);
+                }
+            } while (!result);
+
+            return new Category(nameCategory, valueRoom);
         }
 
 

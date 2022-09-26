@@ -17,5 +17,9 @@ namespace reservation_hotel.Strings
         public static readonly string CpfIsNotValid = "O Numero digitado não é um Cpf valido.";
         public static readonly string UserIsRegister = "Este cliente ja esta cadastrado.";
         public static readonly string UserIsNotRegister = "Este cliente não foi encontrado em nossos registros.";
+        public static readonly string ValueBiggerZero = "O numero precisa ser mais que zero.";
+        public static readonly string ValueIsNotDecimal = "O numero digitado não é um valor monetario.";
+        public static readonly string ValueBiggerZeroDecimal = "O valor da diaria precisa ser superior a zero.";
+        public static readonly string RoomIsRegister = "Este quarto ja esta cadastrado.";
     }
 }

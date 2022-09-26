@@ -9,7 +9,12 @@
         public static readonly string DigitCPF = "Digite o CPF somentes numeros.";
         public static readonly string DigitName = "Digite o nome do cliente.";
         public static readonly string UserCreate = "Cliente cadastrado com sucesso.";
-        public static readonly string UserDeleted = "Cliente removido com sucesso.";
+        public static readonly string UserDeleted = "Cliente removido com sucesso."; 
+        public static readonly string DigitNumberRoom = "Digite o numero do quarto.";
+        public static readonly string DigitSpaceRoom = "Digite o numero do hospedes.";
+        public static readonly string DigitCategoryName = "Digite o nome da categoria.";
+        public static readonly string DigitValueByDay = "Digite valor da diaria.";
+        public static readonly string RoomCreate = "Quarto cadastrado com sucesso.";
 
     }
 }

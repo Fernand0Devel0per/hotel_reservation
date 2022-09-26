@@ -44,10 +44,31 @@ namespace reservation_hotel.Messages
 
         }
 
+        public static void RoomListMessage(Room room)
+        {
+            StringBuilder sb = new StringBuilder();
+            sb.AppendLine(string.Format("{0}{1}", StringShort.RoomNumber, room.Number));
+            sb.AppendLine(string.Format("{0}{1}", StringShort.RoomSpace, room.Space));
+            sb.AppendLine(string.Format("{0}{1}", StringShort.CategoryName, room.Category.Name));
+            sb.AppendLine(string.Format("{0}{1}", StringShort.CategoryPrice, room.Category.Price));
+            sb.Append("--------------------------------");
+            Console.WriteLine(sb.ToString());
+
+        }
+
         public static void TwoMessages(string firstMessage, string secondMessage) 
         {
             Console.WriteLine(firstMessage);
             Console.Write(secondMessage);
+        }
+
+        public static void MenuRoomMessage()
+        {
+            MessagesCustom.MessageClearAndMessage(StringLong.WelcomeProgram);
+            MessagesCustom.MessageDelay(StringOptions.ListRoom);
+            MessagesCustom.MessageDelay(StringOptions.RegisterRoom);
+            MessagesCustom.MessageDelay(StringOptions.RemoveRoom);
+            MessagesCustom.MessageDelay(StringOptions.LeaveProgram);
         }
 
 

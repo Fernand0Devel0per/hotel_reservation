@@ -50,6 +50,24 @@ namespace reservation_hotel.Services
             return false;
 
         }
+
+        public static bool RoomIsRegister(int number, List<Room> rooms)
+        {
+            foreach (var item in rooms)
+            {
+                if (item.Number == number)
+                {
+                    return true;
+                    break;
+                }
+            }
+            return false;
+
+        }
+
+        public static bool IsBiggerZero(int number) => number > 0;
+        public static bool IsBiggerZero(decimal number) => number > 0m;
+
     }
 
 

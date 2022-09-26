@@ -27,6 +27,7 @@ namespace reservation_hotel.Core
                     UserOptions();
                     break;
                 case 2:
+                    RoomOptions();
                     break;
                 case 3:
                     break;
@@ -61,7 +62,39 @@ namespace reservation_hotel.Core
             } while (!(optionsSelect == 4));  
         }
 
+        private void RoomOptions()
+        {
+            int optionsSelect = 0;
+            do
+            {
+                Message.MenuRoomMessage();
+                optionsSelect = ConvertCheckService.ParseIntCheck();
+                if (!ConditionsService.OptionIsValid(optionsSelect))
+                    continue;
+                else
+                {
+                    switch (optionsSelect)
+                    {
+                        case 1:
+                            RoomService.GetAllRooms(Hotel);
+                            break;
+                        case 2:
+                            RoomService.RegisterRoom(Hotel);
+                            break;
+                        case 3:
+                            //UserService.RemoveUser(Hotel);
+                            break;
+                    }
+                }
+
+            } while (!(optionsSelect == 4));
+        }
+
         
+
+
+
+
 
     }
 }
