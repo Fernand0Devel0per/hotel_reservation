@@ -21,5 +21,6 @@ namespace reservation_hotel.Strings
         public static readonly string ValueIsNotDecimal = "O numero digitado não é um valor monetario.";
         public static readonly string ValueBiggerZeroDecimal = "O valor da diaria precisa ser superior a zero.";
         public static readonly string RoomIsRegister = "Este quarto ja esta cadastrado.";
+        public static readonly string RoomIsNotRegister = "Este quarto não foi encontrado em nossos registros.";
     }
 }

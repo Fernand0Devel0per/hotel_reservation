@@ -82,7 +82,7 @@ namespace reservation_hotel.Core
                             RoomService.RegisterRoom(Hotel);
                             break;
                         case 3:
-                            //UserService.RemoveUser(Hotel);
+                            RoomService.RemoveRoom(Hotel);
                             break;
                     }
                 }

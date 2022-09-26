@@ -7,5 +7,6 @@
         public List<User> Users { get; set; }
         public DateTime DateStart { get; set; }
         public DateTime DateEnd { get; set; }
+        public bool IsFinish { get; set; }
     }
 }

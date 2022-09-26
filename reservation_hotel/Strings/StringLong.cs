@@ -15,6 +15,7 @@
         public static readonly string DigitCategoryName = "Digite o nome da categoria.";
         public static readonly string DigitValueByDay = "Digite valor da diaria.";
         public static readonly string RoomCreate = "Quarto cadastrado com sucesso.";
+        public static readonly string RoomDeleted = "Quarto removido com sucesso.";
 
     }
 }

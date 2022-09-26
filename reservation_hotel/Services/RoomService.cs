@@ -46,33 +46,33 @@ namespace reservation_hotel.Services
 
         }
 
-        //public static void RemoveUser(Hotel hotel)
-        //{
-        //    string cpf = ConvertCheckService.ParseCpf();
-        //    User user = hotel.Users.FirstOrDefault(u => u.Cpf == cpf);
-        //    if (user != null)
-        //    {
+        public static void RemoveRoom(Hotel hotel)
+        {
+            int numberRoom = ConvertCheckService.GetNumberRoom();
+            Room room = hotel.Rooms.FirstOrDefault(r => r.Number == numberRoom);
+            if (room != null)
+            {
 
-        //        try
-        //        {
-        //            hotel.Users.Remove(user);
-        //            RepositoryService.SaveNewUser(hotel.Users, StringPath.WorkComputerPartialPath, StringPath.FileNameUsers);
-        //            Message.UserListMessage(user);
-        //            MessagesCustom.MessageAwaitKeyPress(StringLong.UserDeleted);
-        //        }
-        //        catch (Exception)
-        //        {
-        //            hotel.Users.Add(user);
-        //        }
+                try
+                {
+                    hotel.Rooms.Remove(room);
+                    RepositoryService.SaveNewRoom(hotel.Rooms, StringPath.WorkComputerPartialPath, StringPath.FileNameRooms);
+                    Message.RoomListMessage(room);
+                    MessagesCustom.MessageAwaitKeyPress(StringLong.RoomDeleted);
+                }
+                catch (Exception)
+                {
+                    hotel.Rooms.Add(room);
+                }
 
 
-        //    }
-        //    else
-        //    {
-        //        MessagesCustom.MessageDelayClear(StringError.UserIsNotRegister);
-        //    }
+            }
+            else
+            {
+                MessagesCustom.MessageDelayClear(StringError.RoomIsNotRegister);
+            }
 
-        //}
+        }
     }
 
 
