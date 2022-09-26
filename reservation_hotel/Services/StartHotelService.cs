@@ -13,8 +13,8 @@ namespace reservation_hotel.Services
     {
         public static Hotel CreateHotel()
         {
-            var rooms = ReadRoomsList(@"C:\Users\fhlot\Desktop\hotel_reservation_dio\reservation_hotel\Infra\Data\Rooms.json");
-            var users = ReadUsersList(@"C:\Users\fhlot\Desktop\hotel_reservation_dio\reservation_hotel\Infra\Data\Users.json");
+            var rooms = ReadRoomsList(StringPath.WorkComputerRoomPath);
+            var users = ReadUsersList(StringPath.WorkComputerUserPath);
             var hotel = new Hotel();
             hotel.Rooms = rooms;
             hotel.Users = users;

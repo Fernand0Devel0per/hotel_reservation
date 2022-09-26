@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\fhlot\\Desktop\\hotel_reservation_dio\\reservation_hotel\\reservation_hotel.csproj": {}
+    "C:\\Users\\ferna\\Desktop\\Fernando\\Estudos\\Dio\\hotel_reservation\\reservation_hotel\\reservation_hotel.csproj": {}
   },
   "projects": {
-    "C:\\Users\\fhlot\\Desktop\\hotel_reservation_dio\\reservation_hotel\\reservation_hotel.csproj": {
+    "C:\\Users\\ferna\\Desktop\\Fernando\\Estudos\\Dio\\hotel_reservation\\reservation_hotel\\reservation_hotel.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\fhlot\\Desktop\\hotel_reservation_dio\\reservation_hotel\\reservation_hotel.csproj",
+        "projectUniqueName": "C:\\Users\\ferna\\Desktop\\Fernando\\Estudos\\Dio\\hotel_reservation\\reservation_hotel\\reservation_hotel.csproj",
         "projectName": "reservation_hotel",
-        "projectPath": "C:\\Users\\fhlot\\Desktop\\hotel_reservation_dio\\reservation_hotel\\reservation_hotel.csproj",
-        "packagesPath": "C:\\Users\\fhlot\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\fhlot\\Desktop\\hotel_reservation_dio\\reservation_hotel\\obj\\",
+        "projectPath": "C:\\Users\\ferna\\Desktop\\Fernando\\Estudos\\Dio\\hotel_reservation\\reservation_hotel\\reservation_hotel.csproj",
+        "packagesPath": "C:\\Users\\ferna\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\ferna\\Desktop\\Fernando\\Estudos\\Dio\\hotel_reservation\\reservation_hotel\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\fhlot\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\ferna\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],

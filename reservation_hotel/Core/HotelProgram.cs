@@ -47,13 +47,13 @@ namespace reservation_hotel.Core
                     switch (optionsSelect)
                     {
                         case 1:
-                            GetAllUsers();
+                            UserService.GetAllUsers(Hotel);
                             break;
                         case 2:
-                            RegisterUser();
+                            UserService.RegisterUser(Hotel);
                             break;
                         case 3:
-                            RemoveUser();
+                            UserService.RemoveUser(Hotel);
                             break;
                     }
                 }
@@ -61,68 +61,7 @@ namespace reservation_hotel.Core
             } while (!(optionsSelect == 4));  
         }
 
-        private void GetAllUsers()
-        {
-            List<User> user = Hotel.Users.OrderBy(u => u.Name).ToList();
-            user.ForEach(u => Message.UserListMessage(u));
-            MessagesCustom.MessageAwaitKeyPress(StringLong.PressKeyToExit);
-        }
-
-        private void RegisterUser()
-        {
-            string phone = ConvertCheckService.ParsePhone();
-            string cpf = ConvertCheckService.ParseCpf();
-            string name = ConvertCheckService.GetName();
-            
-            if (ConditionsService.UserIsRegister(cpf, Hotel.Users))
-                MessagesCustom.MessageDelayClear(StringError.UserIsRegister);
-            else
-            {
-                User user = new User(name, cpf, phone);
-                Hotel.Users.Add(user);
-                try
-                {
-                    RepositoryService.SaveNewUser(Hotel.Users, @"C:\Users\fhlot\Desktop\hotel_reservation_dio\reservation_hotel\Infra\Data\", "Users.json");
-                    Message.UserListMessage(user);
-                    MessagesCustom.MessageAwaitKeyPress(StringLong.UserCreate);
-                }
-                catch (Exception)
-                {
-
-                    Hotel.Users.Remove(user);
-                    MessagesCustom.MessageDelayClear(StringError.FileUsersNotFound);
-                }
-            }
-
-        }
-
-        private void RemoveUser()
-        {
-            string cpf = ConvertCheckService.ParseCpf();
-            User user = Hotel.Users.FirstOrDefault(u => u.Cpf == cpf);
-            if (user != null)
-            {
-
-                try
-                {
-                    Hotel.Users.Remove(user);
-                    RepositoryService.SaveNewUser(Hotel.Users, @"C:\Users\fhlot\Desktop\hotel_reservation_dio\reservation_hotel\Infra\Data\", "Users.json");
-                    Message.UserListMessage(user);
-                    MessagesCustom.MessageAwaitKeyPress(StringLong.UserDeleted);
-                }
-                catch (Exception)
-                {
-                    Hotel.Users.Add(user);
-                }
-                
-
-            }
-            else
-            {
-                MessagesCustom.MessageDelayClear(StringError.UserIsNotRegister);
-            }
-
-        }
+        
 
     }
 }
