@@ -1,11 +1,6 @@
 ﻿using Newtonsoft.Json;
 using reservation_hotel.Models;
 using reservation_hotel.Strings;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace reservation_hotel.Services
 {
@@ -18,8 +13,8 @@ namespace reservation_hotel.Services
             var hotel = new Hotel();
             hotel.Rooms = rooms;
             hotel.Users = users;
-            hotel.OrderFinish = new List<Order>();
-            hotel.OrderActives = new List<Order>();
+            hotel.Order = ReadOrderList(StringPath.WorkComputerOrderPath);
+
 
             return hotel;
         }
@@ -60,7 +55,7 @@ namespace reservation_hotel.Services
 
         }
 
-        private static List<Order> ReadOrderActivesList(string path)
+        private static List<Order> ReadOrderList(string path)
         {
             string content = string.Empty;
             List<Order> order;
@@ -78,22 +73,6 @@ namespace reservation_hotel.Services
 
         }
 
-        private static List<Order> ReadOrderFinishList(string path)
-        {
-            string content = string.Empty;
-            List<Order> order;
-            try
-            {
-                content = File.ReadAllText(path);
-                order = JsonConvert.DeserializeObject<List<Order>>(content);
-            }
-            catch (FileNotFoundException)
-            {
-                throw new FileNotFoundException(StringError.FileOrderFinishNotFound, path);
-            }
-
-            return order;
-
-        }
+       
     }
 }

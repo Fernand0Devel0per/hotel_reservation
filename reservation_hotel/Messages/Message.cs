@@ -53,9 +53,24 @@ namespace reservation_hotel.Messages
             sb.AppendLine(string.Format("{0}{1}", StringShort.CategoryPrice, room.Category.Price));
             sb.Append("--------------------------------");
             Console.WriteLine(sb.ToString());
-
         }
 
+
+        public static void OrderListMessage(Order order)
+        {
+            StringBuilder sb = new StringBuilder();
+            sb.AppendLine(string.Format("{0}{1}", StringShort.IdOrder, order.Id));
+            sb.AppendLine(string.Format("{0}{1}", StringShort.RoomNumber, order.Room.Number));
+            foreach (var item in order.Users)
+            {
+                sb.AppendLine(string.Format("{0}{1}", StringShort.Name, item.Name));
+            }
+            sb.AppendLine(string.Format("{0}{1}", StringShort.Checkin, order.DateStart.ToString("dd/MM/yyyy")));
+            sb.AppendLine(string.Format("{0}{1}", StringShort.Checkout, order.DateEnd.ToString("dd/MM/yyyy")));
+            sb.AppendLine(string.Format("{0}{1}", StringShort.TotalToPay, order.TotalToPay().ToString("C")));
+            sb.Append("--------------------------------");
+            Console.WriteLine(sb.ToString());
+        }
         public static void TwoMessages(string firstMessage, string secondMessage) 
         {
             Console.WriteLine(firstMessage);
@@ -68,6 +83,23 @@ namespace reservation_hotel.Messages
             MessagesCustom.MessageDelay(StringOptions.ListRoom);
             MessagesCustom.MessageDelay(StringOptions.RegisterRoom);
             MessagesCustom.MessageDelay(StringOptions.RemoveRoom);
+            MessagesCustom.MessageDelay(StringOptions.LeaveProgram);
+        }
+
+        public static void MenuReservatioMessage()
+        {
+            MessagesCustom.MessageClearAndMessage(StringLong.WelcomeProgram);
+            MessagesCustom.MessageDelay(StringOptions.ReservatioActives);
+            MessagesCustom.MessageDelay(StringOptions.ReservatioFinish);
+            MessagesCustom.MessageDelay(StringOptions.LeaveProgram);
+        }
+
+        public static void ReservatioActivesMessage()
+        {
+            MessagesCustom.MessageClearAndMessage(StringLong.WelcomeProgram);
+            MessagesCustom.MessageDelay(StringOptions.ListReservatioActives);
+            MessagesCustom.MessageDelay(StringOptions.RegisterReservatioActive);
+            MessagesCustom.MessageDelay(StringOptions.RemoveReservatioActive);
             MessagesCustom.MessageDelay(StringOptions.LeaveProgram);
         }
 

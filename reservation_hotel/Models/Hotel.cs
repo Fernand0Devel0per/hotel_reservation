@@ -4,7 +4,6 @@
     {
         public List<Room> Rooms { get; set; }
         public List<User> Users { get; set; }
-        public List<Order> OrderActives { get; set; }
-        public List<Order> OrderFinish { get; set; }
+        public List<Order> Order { get; set; }
     }
 }

@@ -30,6 +30,7 @@ namespace reservation_hotel.Core
                     RoomOptions();
                     break;
                 case 3:
+                    OrderOptions();
                     break;
             }
         }
@@ -90,11 +91,57 @@ namespace reservation_hotel.Core
             } while (!(optionsSelect == 4));
         }
 
-        
+        private void OrderOptions()
+        {
+            int optionsSelect = 0;
+            do
+            {
+                Message.MenuReservatioMessage();
+                optionsSelect = ConvertCheckService.ParseIntCheck();
+                if (!ConditionsService.OptionIsValid(optionsSelect))
+                    continue;
+                else
+                {
+                    switch (optionsSelect)
+                    {
+                        case 1:
+                            ReservatioActivesOptions();
+                            break;
+                        case 2:
+                            //RoomService.RegisterRoom(Hotel);
+                            break;
+                    }
+                }
 
+            } while (!(optionsSelect == 3));
+        }
 
+        private void ReservatioActivesOptions()
+        {
+            int optionsSelect = 0;
+            do
+            {
+                Message.ReservatioActivesMessage();
+                optionsSelect = ConvertCheckService.ParseIntCheck();
+                if (!ConditionsService.OptionIsValid(optionsSelect))
+                    continue;
+                else
+                {
+                    switch (optionsSelect)
+                    {
+                        case 1:
+                            ReservatioActives.GetAllReservatioActives(Hotel);
+                            break;
+                        case 2:
+                            //RoomService.RegisterRoom(Hotel);
+                            break;
+                        case 3:
+                            //RoomService.RemoveRoom(Hotel);
+                            break;
+                    }
+                }
 
-
-
+            } while (!(optionsSelect == 4));
+        }
     }
 }

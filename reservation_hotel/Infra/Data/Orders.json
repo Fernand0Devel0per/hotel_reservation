@@ -1,0 +1,55 @@
+[
+  {
+    "Id": 1,
+    "Room": {
+      "Number": 1,
+      "Space": 2,
+      "Category": {
+        "Name": "Suite Casal Simples",
+        "Price": 100.00
+      }
+    },
+    "Users": [
+      {
+        "Name": "Tio Patinhas",
+        "Cpf": "352.125.125-22",
+        "Phone": "55-16-999555541"
+      },
+      {
+        "Name": "Chapolin Colorado",
+        "Cpf": "352.125.125-46",
+        "Phone": "55-25-989577541"
+      }
+    ],
+    "DateStart": "2022-09-24T18:25:43.511Z",
+    "DateEnd": "2022-09-30T18:25:43.511Z",
+    "IsFinish": true
+  },
+  {
+    "Id": 2,
+    "Room": {
+      "Number": 1,
+      "Space": 2,
+      "Category": {
+        "Name": "Suite Casal Simples",
+        "Price": 100.00
+      }
+    },
+    "Users": [
+      {
+        "Name": "Tio Patinhas",
+        "Cpf": "352.125.125-22",
+        "Phone": "55-16-999555541"
+      },
+      {
+        "Name": "Chapolin Colorado",
+        "Cpf": "352.125.125-46",
+        "Phone": "55-25-989577541"
+      }
+    ],
+    "DateStart": "2022-09-20T18:25:43.511Z",
+    "DateEnd": "2022-09-26T18:25:43.511Z",
+    "IsFinish": false
+  },
+
+]

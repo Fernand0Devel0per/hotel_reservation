@@ -10,14 +10,17 @@ namespace reservation_hotel.Strings
     {
         public static readonly string InsertValue = "Digite a Opçao:";
         public static readonly string InvalidOption = "Opção Invalida.";
-        public static readonly string Name = "Name: ";
+        public static readonly string Name = "Nome do Cliente: ";
         public static readonly string Cpf = "CPF: ";
         public static readonly string PhoneNumber = "Telefone: ";
-        public static readonly string RoomNumber = "Numero: ";
+        public static readonly string RoomNumber = "Numero do quarto: ";
         public static readonly string RoomSpace = "Numero total de hospedes: ";
         public static readonly string CategoryName = "Categoria: ";
         public static readonly string CategoryPrice = "Preço da Diaria: ";
-
+        public static readonly string IdOrder = "Numero da Ordem: ";
+        public static readonly string Checkin = "Checkin: ";
+        public static readonly string Checkout = "Checkout: ";
+        public static readonly string TotalToPay = "Total a pagar: ";
 
     }
 }
