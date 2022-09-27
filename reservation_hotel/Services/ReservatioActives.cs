@@ -12,6 +12,12 @@ namespace reservation_hotel.Services
             orders.ForEach(o => Message.OrderListMessage(o));
             MessagesCustom.MessageAwaitKeyPress(StringLong.PressKeyToExit);
         }
+
+        public static void RegisterNewOrder(Hotel hotel)
+        {
+            int numberOrder = ConvertCheckService.CreateNextNumberOrder(hotel.Order);
+        }
+
         /*
          * public static void RegisterUser(Hotel hotel)
         {

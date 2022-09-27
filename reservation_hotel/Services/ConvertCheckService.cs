@@ -166,6 +166,13 @@ namespace reservation_hotel.Services
             return new Category(nameCategory, valueRoom);
         }
 
+        public static int CreateNextNumberOrder(List<Order> listOrder)
+        {
+            int result = 0;
+            listOrder.ForEach(o => result = (o.Id > result) ? o.Id : result);
+            return result
+        } 
+
 
     }
 }
