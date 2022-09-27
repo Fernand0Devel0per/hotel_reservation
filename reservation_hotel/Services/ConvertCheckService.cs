@@ -170,7 +170,7 @@ namespace reservation_hotel.Services
         {
             int result = 0;
             listOrder.ForEach(o => result = (o.Id > result) ? o.Id : result);
-            return result
+            return result + 1;
         } 
 
 
