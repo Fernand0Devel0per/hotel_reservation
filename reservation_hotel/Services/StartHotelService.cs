@@ -8,12 +8,12 @@ namespace reservation_hotel.Services
     {
         public static Hotel CreateHotel()
         {
-            var rooms = ReadRoomsList(StringPath.WorkComputerRoomPath);
-            var users = ReadUsersList(StringPath.WorkComputerUserPath);
+            var rooms = ReadRoomsList(StringPath.HomeComputerRoomPath);
+            var users = ReadUsersList(StringPath.HomeComputerUserPath);
             var hotel = new Hotel();
             hotel.Rooms = rooms;
             hotel.Users = users;
-            hotel.Order = ReadOrderList(StringPath.WorkComputerOrderPath);
+            hotel.Order = ReadOrderList(StringPath.HomeComputerOrderPath);
 
 
             return hotel;

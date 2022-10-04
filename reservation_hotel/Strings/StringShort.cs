@@ -21,6 +21,7 @@ namespace reservation_hotel.Strings
         public static readonly string Checkin = "Checkin: ";
         public static readonly string Checkout = "Checkout: ";
         public static readonly string TotalToPay = "Total a pagar: ";
+        public static readonly string RoomSearch = "Informe o numero do quarto: ";
 
     }
 }

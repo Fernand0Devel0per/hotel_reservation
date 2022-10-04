@@ -32,7 +32,7 @@ namespace reservation_hotel.Services
                 hotel.Users.Add(user);
                 try
                 {
-                    RepositoryService.SaveNewUser(hotel.Users, StringPath.WorkComputerPartialPath, StringPath.FileNameUsers);
+                    RepositoryService.SaveNewUser(hotel.Users, StringPath.HomeComputerPartialPath, StringPath.FileNameUsers);
                     Message.UserListMessage(user);
                     MessagesCustom.MessageAwaitKeyPress(StringLong.UserCreate);
                 }

@@ -171,7 +171,21 @@ namespace reservation_hotel.Services
             int result = 0;
             listOrder.ForEach(o => result = (o.Id > result) ? o.Id : result);
             return result + 1;
-        } 
+        }
+
+        public static int ParseIntCheck(string message)
+        {
+            int valueParse = 0;
+            bool result;
+            Console.Write(message);
+            result = int.TryParse(Console.ReadLine(), out valueParse);
+            if (!result)
+            {
+                MessagesCustom.MessageDelayClear(StringError.ValueIsNotInteger);
+                return -1;
+            }
+            return valueParse;
+        }
 
 
     }

@@ -15,70 +15,66 @@ namespace reservation_hotel.Services
 
         public static void RegisterNewOrder(Hotel hotel)
         {
+            
             int numberOrder = ConvertCheckService.CreateNextNumberOrder(hotel.Order);
+            Room room = SelectRoom(hotel);
+            List<User> users = RegisterUsers(hotel, room.Space);
+
+
         }
 
-        /*
-         * public static void RegisterUser(Hotel hotel)
+        private static Room SelectRoom(Hotel hotel)
         {
-            string phone = ConvertCheckService.ParsePhone();
-            string cpf = ConvertCheckService.ParseCpf();
-            string name = ConvertCheckService.GetName();
-
-            if (ConditionsService.UserIsRegister(cpf, hotel.Users))
-                MessagesCustom.MessageDelayClear(StringError.UserIsRegister);
-            else
+            int roomNumber = 0;
+            Room room = null;
+            do
             {
-                User user = new User(name, cpf, phone);
-                hotel.Users.Add(user);
-                try
+                roomNumber = ConvertCheckService.ParseIntCheck(StringShort.RoomSearch);
+                room = hotel.Rooms.FirstOrDefault(r => r.Number == roomNumber);
+                if (room == null)
                 {
-                    RepositoryService.SaveNewUser(hotel.Users, StringPath.WorkComputerPartialPath, StringPath.FileNameUsers);
-                    Message.UserListMessage(user);
-                    MessagesCustom.MessageAwaitKeyPress(StringLong.UserCreate);
+                    MessagesCustom.MessageDelayClear(StringError.RoomIsNotRegister);
                 }
-                catch (Exception)
-                {
 
-                    hotel.Users.Remove(user);
-                    MessagesCustom.MessageDelayClear(StringError.FileUsersNotFound);
-                }
-            }
-
+            } while (room == null);
+            return room;
         }
 
-        public static void RemoveUser(Hotel hotel)
+        private static List<User> RegisterUsers(Hotel hotel, int space)
         {
-            string cpf = ConvertCheckService.ParseCpf();
-            User user = hotel.Users.FirstOrDefault(u => u.Cpf == cpf);
-            if (user != null)
+            List<User> users = new List<User>();
+
+            char decision = 'n';
+            do
             {
-
-                try
+                string cpf = ConvertCheckService.ParseCpf();
+                User user = hotel.Users.FirstOrDefault(u => u.Cpf == cpf);
+                if (user != null)
                 {
-                    hotel.Users.Remove(user);
-                    RepositoryService.SaveNewUser(hotel.Users, StringPath.WorkComputerPartialPath, StringPath.FileNameUsers);
-                    Message.UserListMessage(user);
-                    MessagesCustom.MessageAwaitKeyPress(StringLong.UserDeleted);
+                    if (!users.Contains(user))
+                    {
+                        users.Add(user);
+                    }
+                    else
+                    {
+                        MessagesCustom.MessageDelayClear(StringLong.UserIsAdd);
+                        continue;
+                    }
                 }
-                catch (Exception)
+                else
                 {
-                    hotel.Users.Add(user);
+                    MessagesCustom.MessageDelayClear(StringLong.userNotFound);
                 }
-
-
-            }
-            else
-            {
-                MessagesCustom.MessageDelayClear(StringError.UserIsNotRegister);
-            }
-
+                if (users.Count >= space)
+                {
+                    break;
+                }
+                MessagesCustom.MessageClearAndMessage(StringLong.MessegeOptionNewUser);
+                decision = char.Parse(Console.ReadLine().ToLower());
+            } while (decision == 'y');
+            return users;
         }
-
         
- 
-         */
-
 
     }
 

@@ -32,7 +32,7 @@ namespace reservation_hotel.Services
                 hotel.Rooms.Add(room);
                 try
                 {
-                    RepositoryService.SaveNewRoom(hotel.Rooms, StringPath.WorkComputerPartialPath, StringPath.FileNameRooms);
+                    RepositoryService.SaveNewRoom(hotel.Rooms, StringPath.HomeComputerPartialPath, StringPath.FileNameRooms);
                     Message.RoomListMessage(room);
                     MessagesCustom.MessageAwaitKeyPress(StringLong.RoomCreate);
                 }
@@ -56,7 +56,7 @@ namespace reservation_hotel.Services
                 try
                 {
                     hotel.Rooms.Remove(room);
-                    RepositoryService.SaveNewRoom(hotel.Rooms, StringPath.WorkComputerPartialPath, StringPath.FileNameRooms);
+                    RepositoryService.SaveNewRoom(hotel.Rooms, StringPath.HomeComputerPartialPath, StringPath.FileNameRooms);
                     Message.RoomListMessage(room);
                     MessagesCustom.MessageAwaitKeyPress(StringLong.RoomDeleted);
                 }
@@ -73,6 +73,8 @@ namespace reservation_hotel.Services
             }
 
         }
+
+        
     }
 
 

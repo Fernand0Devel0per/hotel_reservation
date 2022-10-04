@@ -16,6 +16,10 @@
         public static readonly string DigitValueByDay = "Digite valor da diaria.";
         public static readonly string RoomCreate = "Quarto cadastrado com sucesso.";
         public static readonly string RoomDeleted = "Quarto removido com sucesso.";
+        public static readonly string UserIsAdd = "Este usuario ja foi adicionado.";
+        public static readonly string RoomFull = "Este quarto ja esta cheio.";
+        public static readonly string userNotFound = "Este usuario não esta cadastrado.";
+        public static readonly string MessegeOptionNewUser = "Deseja adicionar mais algum cliente digite y: ";
 
     }
 }

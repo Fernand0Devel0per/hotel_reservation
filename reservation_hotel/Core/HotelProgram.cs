@@ -133,7 +133,7 @@ namespace reservation_hotel.Core
                             ReservatioActives.GetAllReservatioActives(Hotel);
                             break;
                         case 2:
-                            //RoomService.RegisterRoom(Hotel);
+                            ReservatioActives.RegisterNewOrder(Hotel);
                             break;
                         case 3:
                             //RoomService.RemoveRoom(Hotel);
