@@ -19,7 +19,8 @@ namespace reservation_hotel.Services
             int numberOrder = ConvertCheckService.CreateNextNumberOrder(hotel.Order);
             Room room = SelectRoom(hotel);
             List<User> users = RegisterUsers(hotel, room.Space);
-
+            (DateTime dateStart, DateTime dateEnd) dates = SelectDatas();
+            
 
         }
 
@@ -75,7 +76,30 @@ namespace reservation_hotel.Services
             return users;
         }
         
+        private static (DateTime, DateTime) SelectDatas()
+        {
+            DateTime dateStart = DateTime.Now;
+            DateTime dateEnd = DateTime.Now;
+            do
+            {
+                dateStart = ConvertCheckService.ParseDateTimeCheck(StringLong.DateStart);
+                if (dateStart <= DateTime.Now.Date)
+                {
+                    MessagesCustom.MessageDelayClear(StringError.DateIsTooSmall, 2);
+                }
+            } while (dateStart <= DateTime.Now.Date);
 
+            do
+            {
+                dateEnd = ConvertCheckService.ParseDateTimeCheck(StringLong.DateEnd);
+                if (dateEnd <= DateTime.Now.Date)
+                {
+                    MessagesCustom.MessageDelayClear(StringError.DateIsNotCorrect, 2);
+                }
+            } while (dateStart <= dateEnd);
+
+            return (dateStart, dateEnd);
+        }
     }
 
 }

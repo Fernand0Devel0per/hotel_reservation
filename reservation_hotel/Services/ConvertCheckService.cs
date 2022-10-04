@@ -187,6 +187,22 @@ namespace reservation_hotel.Services
             return valueParse;
         }
 
+        public static DateTime ParseDateTimeCheck(string message)
+        {
+            DateTime date = DateTime.Now;
+            bool result;           
+            do
+            {
+                Console.Write(message);
+                result = DateTime.TryParse(Console.ReadLine(), out date);
+                if (!result)
+                {
+                    MessagesCustom.MessageDelayClear(StringError.DateIsNotValid);
+                }
+            } while (!result);
+            return date;
+        }
+
 
     }
 }

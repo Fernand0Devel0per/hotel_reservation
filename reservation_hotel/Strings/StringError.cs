@@ -22,5 +22,8 @@ namespace reservation_hotel.Strings
         public static readonly string ValueBiggerZeroDecimal = "O valor da diaria precisa ser superior a zero.";
         public static readonly string RoomIsRegister = "Este quarto ja esta cadastrado.";
         public static readonly string RoomIsNotRegister = "Este quarto não foi encontrado em nossos registros.";
+        public static readonly string DateIsNotValid = "Esta não é uma data valida verifique e tente novamente.";
+        public static readonly string DateIsTooSmall = $"A data de entrada não pode ser menor do que {DateTime.Now.ToString("dd/MM/yyyy")}.";
+        public static readonly string DateIsNotCorrect = "A data de entrada não pode ser menor do que a data de entrada.";
     }
 }
