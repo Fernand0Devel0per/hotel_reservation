@@ -136,7 +136,7 @@ namespace reservation_hotel.Core
                             ReservatioActives.RegisterNewOrder(Hotel);
                             break;
                         case 3:
-                            //RoomService.RemoveRoom(Hotel);
+                            ReservatioActives.RemoveOrder(Hotel);
                             break;
                     }
                 }

@@ -25,5 +25,7 @@ namespace reservation_hotel.Strings
         public static readonly string DateIsNotValid = "Esta não é uma data valida verifique e tente novamente.";
         public static readonly string DateIsTooSmall = $"A data de entrada não pode ser menor do que {DateTime.Now.ToString("dd/MM/yyyy")}.";
         public static readonly string DateIsNotCorrect = "A data de entrada não pode ser menor do que a data de entrada.";
+        public static readonly string OrderIsFinish = "Ordem ja finalizadas não podem ser removidas";
+        public static readonly string OrderNotExist = "Essa ordem não existe.";
     }
 }

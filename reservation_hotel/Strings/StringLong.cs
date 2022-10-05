@@ -23,6 +23,8 @@
         public static readonly string DateStart = "Informe a data de entrada da reserva no modelo 00/00/0000: ";
         public static readonly string DateEnd = "Informe a data de saida da reserva no modelo 00/00/0000: ";
         public static readonly string OrderCreate = "Ordem criada com sucesso.";
+        public static readonly string DigitNumberOrder = "Digite o numero da ordem.";
+        public static readonly string OrdemRemoved = "Ordem excluida com sucesso.";
 
 
     }

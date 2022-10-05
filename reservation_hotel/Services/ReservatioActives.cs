@@ -115,6 +115,43 @@ namespace reservation_hotel.Services
 
             return (dateStart, dateEnd);
         }
+
+        public static void RemoveOrder(Hotel hotel)
+        {
+            int numberOrder = ConvertCheckService.GetNumberOrder();
+            Order order = hotel.Order.FirstOrDefault(o => o.Id == numberOrder);
+            if (order != null)
+            {
+
+                try
+                {
+                    if (order.IsFinish)
+                    {
+                        MessagesCustom.MessageDelayClear(StringError.OrderIsFinish, 2);
+                    }
+                    else
+                    {
+
+                        hotel.Order.Remove(order);
+                        RepositoryService.SaveNewOrder(hotel.Order, StringPath.HomeComputerPartialPath, StringPath.FileNameOrders);
+                        Message.OrderListMessage(order);
+                        MessagesCustom.MessageAwaitKeyPress(StringLong.OrdemRemoved);
+                    }
+
+                }
+                catch (Exception)
+                {
+                    hotel.Order.Add(order);
+                }
+
+
+            }
+            else
+            {
+                MessagesCustom.MessageDelayClear(StringError.OrderNotExist);
+            }
+
+        }
     }
 
 }

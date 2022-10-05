@@ -9,7 +9,7 @@
             Users = users;
             DateStart = dateStart;
             DateEnd = dateEnd;
-            IsFinish = true;
+            IsFinish = false;
         }
 
         public int Id { get; set; }

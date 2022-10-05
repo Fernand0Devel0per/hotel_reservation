@@ -124,6 +124,25 @@ namespace reservation_hotel.Services
 
         }
 
+        public static int GetNumberOrder()
+        {
+            bool result = false;
+            int number = 0;
+            do
+            {
+                Console.Clear();
+                Message.TwoMessages(StringLong.DigitNumberOrder, StringShort.IdOrder);
+                number = ParseIntCheckNoMessage();
+                result = ConditionsService.IsBiggerZero(number);
+                if (!result)
+                {
+                    MessagesCustom.MessageDelayClear(StringError.ValueBiggerZero);
+                }
+            } while (!result);
+            return number;
+
+        }
+
         public static int GetSpaceRoom()
         {
             bool result = false;
