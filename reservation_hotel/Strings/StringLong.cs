@@ -22,7 +22,8 @@
         public static readonly string MessegeOptionNewUser = "Deseja adicionar mais algum cliente digite y: ";
         public static readonly string DateStart = "Informe a data de entrada da reserva no modelo 00/00/0000: ";
         public static readonly string DateEnd = "Informe a data de saida da reserva no modelo 00/00/0000: ";
-        
+        public static readonly string OrderCreate = "Ordem criada com sucesso.";
+
 
     }
 }

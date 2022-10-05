@@ -35,6 +35,21 @@ namespace reservation_hotel.Services
                 return false;
             }
             return true;
+        }
+
+        public static bool SaveNewOrder(List<Order> order, string path, string fileName)
+        {
+            try
+            {
+                string json = JsonConvert.SerializeObject(order);
+                string fullPath = Path.Combine(path, fileName);
+                File.WriteAllText(fullPath, json);
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+            return true;
 
 
         }

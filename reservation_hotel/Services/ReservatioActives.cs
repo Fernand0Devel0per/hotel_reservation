@@ -20,6 +20,21 @@ namespace reservation_hotel.Services
             Room room = SelectRoom(hotel);
             List<User> users = RegisterUsers(hotel, room.Space);
             (DateTime dateStart, DateTime dateEnd) dates = SelectDatas();
+            var order = new Order(numberOrder, room, users, dates.dateStart, dates.dateEnd);
+            hotel.Order.Add(order);
+
+            try
+            {
+                RepositoryService.SaveNewOrder(hotel.Order, StringPath.HomeComputerPartialPath, StringPath.FileNameOrders);
+                Message.OrderListMessage(order);
+                MessagesCustom.MessageAwaitKeyPress(StringLong.OrderCreate);
+            }
+            catch (Exception)
+            {
+
+                hotel.Order.Remove(order);
+                MessagesCustom.MessageDelayClear(StringError.FileRoomsNotFound);
+            }
             
 
         }
@@ -92,11 +107,11 @@ namespace reservation_hotel.Services
             do
             {
                 dateEnd = ConvertCheckService.ParseDateTimeCheck(StringLong.DateEnd);
-                if (dateEnd <= DateTime.Now.Date)
+                if (dateStart >= dateEnd)
                 {
                     MessagesCustom.MessageDelayClear(StringError.DateIsNotCorrect, 2);
                 }
-            } while (dateStart <= dateEnd);
+            } while (dateStart >= dateEnd);
 
             return (dateStart, dateEnd);
         }
